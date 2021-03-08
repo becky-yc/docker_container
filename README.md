@@ -1,32 +1,42 @@
-[![CircleCI](https://circleci.com/gh/noahgift/container-revolution-devops-microservices.svg?style=svg)](https://circleci.com/gh/noahgift/container-revolution-devops-microservices)
+# container-from-scratch-python
+This is building a container from scratch
 
-# Container Revolution
+## Build the Container Yourself and Push to Docker Hub
 
-O'Reilly OLT(Online Live Training) on  DevOps course on microservices
+### Build image
+*(If you want to develop yourself)* 
+docker build --tag=hello-duke-cli-210 .
 
-## Proposed Kubernetes Example Steps
+### List docker images
+docker image ls
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask scikit-learn app in Container
-* Run via kubectl
-* Configure cluster and Deploy
-* Loadtest and verify auto-scale
+### Run my newly built container
 
-## Boston Housing Dataset Pickled model Colab
+docker run -it hello-duke-cli-210 python app.py --name "Big John"
 
-https://github.com/noahgift/boston_housing_pickle
+### Push to Docker Hub
 
-## Diagram & Steps
+*Note:  You will need to change for your Docker Hub Repo*
+docker push noahgift/duke102:tagname
 
-1.  Create project:  Dockerfile, app, serialized/pickled model
-2.  Build and test
-3.  Push to Dockerhub
-4.  Pull it onto AWS Cloud 9
-5.  Predict via pulled container
-6.  Extend and push to Amazon ECR
-7.  Pull onto new AWS Cloud 9 environment via ECR
-8.  Pull onto GCP Cloud
+## Run it yourself
 
+```bash
+docker pull noahgift/cloudapp:latest
+docker run -it noahgift/cloudapp bash 
 
-[![image](https://user-images.githubusercontent.com/58792/65437053-1aeb5d00-ddf1-11e9-94ab-099fc7029e28.png)]
+#then run python app.py --help
+```
+
+## Pass in a command
+
+```bash
+docker run -it noahgift/cloudapp python app.py --name "Big John"
+#the output
+Hello Big John!
+```
+
+### More things Do
+
+* Lint the code with Github Actions (see the Makefile)
+* Automatically build the container after lint, and push to DockerHub or some other Container Registery
