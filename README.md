@@ -5,19 +5,19 @@ This is building a container from scratch
 
 ### Build image
 *(If you want to develop yourself)* 
-docker build --tag=hello-duke-cli-210 .
+docker build --tag=test_hello_hello .
 
 ### List docker images
 docker image ls
 
 ### Run my newly built container
 
-docker run -it hello-duke-cli-210 python app.py --name "Big John"
+docker run -it test_hello_hello python app.py --name "Big John"
 
 ### Push to Docker Hub
 
 *Note:  You will need to change for your Docker Hub Repo*
-docker push noahgift/duke102:tagname
+docker push mishamiho/test_hello_hello:tagname
 
 ## Run it yourself
 
@@ -36,7 +36,3 @@ docker run -it mishamiho/test_hello_hello python app.py --name "Big John"
 Hello Big John!
 ```
 
-### More things Do
-
-* Lint the code with Github Actions (see the Makefile)
-* Automatically build the container after lint, and push to DockerHub or some other Container Registery
