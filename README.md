@@ -22,8 +22,8 @@ docker push noahgift/duke102:tagname
 ## Run it yourself
 
 ```bash
-docker pull noahgift/cloudapp:latest
-docker run -it noahgift/cloudapp bash 
+docker pull mishamiho/test_hello_hello:latest
+docker run -it mishamiho/test_hello_hello bash 
 
 #then run python app.py --help
 ```
@@ -31,7 +31,7 @@ docker run -it noahgift/cloudapp bash
 ## Pass in a command
 
 ```bash
-docker run -it noahgift/cloudapp python app.py --name "Big John"
+docker run -it mishamiho/test_hello_hello python app.py --name "Big John"
 #the output
 Hello Big John!
 ```
